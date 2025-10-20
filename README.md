@@ -1,159 +1,152 @@
-# Financial Agent - AI-Powered Financial Management App
+# 💰 Financial Agent — AI-Powered Financial Management App
 
-A production-ready, mobile-first financial management application with AI assistance, bank integration via Plaid, and WebAuthn security.
+> **Smart, Secure & AI-Driven Personal Finance Assistant**
 
-## Features
+A mobile-first, production-ready application that helps you track, analyze, and improve your financial health — powered by **AI**, **Plaid banking**, and **WebAuthn security**.
 
-### 🔐 Security
-- **WebAuthn Authentication**: Device password/biometric unlock
-- **AES-256 Encryption**: All sensitive data encrypted at rest
-- **JWT Tokens**: Short-lived access tokens with refresh mechanism
-- **GDPR Compliant**: Full data ownership and deletion capabilities
+---
 
-### 🏦 Banking Integration
-- **Plaid Sandbox**: Secure bank account linking
-- **Real-time Balances**: Check account balances with PIN protection
-- **Transaction Sync**: Automatic transaction fetching and categorization
-- **Multi-account Support**: Link multiple bank accounts
+## 🌐 Live Demo
+👉 **[personal-finance-ai-client.vercel.app](https://personal-finance-ai-client.vercel.app)**
 
-### 📊 Dashboard & Analytics
-- **Cash Flow Analysis**: Monthly inflow vs outflow visualization
-- **Expense Breakdown**: Category-wise spending with pie charts
-- **Net Worth Tracking**: Assets vs liabilities trend analysis
-- **What-if Simulator**: Future wealth projections
-- **Anomaly Detection**: Unusual transaction alerts
-- **CSV Export**: Download chart data
+---
 
-### 🤖 AI Assistant
-- **Gemini AI Integration**: Natural language financial queries
-- **Voice Input/Output**: Hands-free interaction
-- **Contextual Responses**: Answers based on your actual financial data
-- **Smart Suggestions**: Loan affordability, future wealth calculations
-- **Source Attribution**: See which data sources were used
+## 📸 Preview
 
-### 📱 Mobile-First UI
-- **PhonePe-like Design**: Intuitive bottom navigation
-- **Dark Mode**: Eye-friendly dark theme
-- **PWA Support**: Install as native app
-- **Responsive**: Works on all screen sizes
-- **Smooth Animations**: Polished micro-interactions
+```
+📱 Financial Agent
+├── AI Assistant: "How much can I save next month?"
+├── Dashboard: Cash flow, spending, and trends
+└── Bank Sync: Securely link accounts via Plaid
+```
 
-## Tech Stack
+---
 
-### Backend
-- **Node.js + Express**: RESTful API server
-- **TypeScript**: Type-safe development
-- **MongoDB**: Document database with encryption
-- **Plaid API**: Bank data integration
-- **Gemini AI**: Natural language processing
-- **WebAuthn**: Passwordless authentication
+## 🚀 Overview
 
-### Frontend
-- **React 18**: Modern UI framework
-- **TypeScript**: Type safety
-- **Tailwind CSS**: Utility-first styling
-- **Chart.js**: Data visualization
-- **Zustand**: State management
-- **Vite**: Fast build tool
+**Financial Agent** combines the power of **AI**, **secure bank integrations**, and **insightful analytics** in one intuitive dashboard.
 
-### DevOps
-- **Docker**: Containerization
-- **Docker Compose**: Multi-container orchestration
-- **Nginx**: Production web server
-- **MongoDB Atlas**: Cloud database option
+💡 Built for users who value **clarity**, **control**, and **security** in managing their money.
 
-## Getting Started
+---
 
-### Prerequisites
-- Node.js 20+
-- MongoDB (or use Docker Compose)
-- Plaid account (sandbox credentials provided)
-- Gemini API key (provided)
+## ✨ Features
 
-### Installation
+| Category | Highlights |
+|-----------|-------------|
+| 🔐 **Security** | WebAuthn (biometric unlock), AES-256 encryption, short-lived JWT tokens, GDPR compliance |
+| 🏦 **Banking Integration** | Plaid sandbox, real-time balances, transaction sync & categorization, multi-account support |
+| 📊 **Analytics & Insights** | Cash flow, expense breakdown, net worth tracking, what-if simulator, anomaly detection |
+| 🤖 **AI Assistant** | Gemini AI integration, voice I/O, contextual answers, loan & wealth projections, source attribution |
+| 📱 **UI / UX** | Mobile-first PWA, PhonePe-like navigation, dark mode, smooth animations, responsive design |
 
-1. **Clone the repository**
+---
+
+## ⚙️ Tech Stack
+
+| Layer | Technologies |
+|--------|--------------|
+| **Frontend** | React 18 • TypeScript • Tailwind CSS • Zustand • Chart.js • Vite |
+| **Backend** | Node.js • Express • TypeScript • MongoDB • Plaid API • Gemini AI • WebAuthn |
+| **DevOps** | Docker • Docker Compose • Nginx • MongoDB Atlas |
+
+---
+
+## 🧭 Architecture
+
+```
+Frontend (React + Tailwind)
+        │
+        ▼
+Backend (Node.js + Express + TypeScript)
+        │
+        ▼
+Plaid API  •  Gemini AI  •  MongoDB (Encrypted)
+```
+
+---
+
+## 🧰 Prerequisites
+
+- Node.js **v20+**
+- MongoDB (local or Docker)
+- Plaid Sandbox credentials
+- Gemini API key
+
+---
+
+## 🔧 Installation
+
 ```bash
+# 1️⃣ Clone repo
 git clone <repository-url>
-cd wind
-```
+cd financial-agent
 
-2. **Install dependencies**
-```bash
+# 2️⃣ Install dependencies
 npm run install:all
-```
 
-3. **Set up environment variables**
-
-The `.env` file has been created with generated secrets. For production, regenerate these:
-
-```bash
-# Server environment
+# 3️⃣ Setup environment
 cd server
 cp .env.example .env
-# Edit .env with your values
+# Edit with your values
 ```
 
-4. **Start MongoDB** (if not using Docker)
+---
+
+## 💻 Run Locally
+
 ```bash
+# Start MongoDB (if not using Docker)
 mongod --dbpath /path/to/data
-```
 
-5. **Run development servers**
-```bash
-# From root directory
+# Run both servers
 npm run dev
 ```
 
-This starts:
-- Backend: http://localhost:5000
-- Frontend: http://localhost:3000
+> **Frontend:** http://localhost:3000  
+> **Backend:** http://localhost:5000  
 
-### Docker Deployment
+---
 
-1. **Build and start all services**
+## 🐳 Docker Setup
+
 ```bash
 docker-compose up -d
 ```
 
-This starts:
-- MongoDB on port 27017
-- Backend API on port 5000
-- Frontend on port 3000
+**Services:**
+- Frontend → port 3000  
+- Backend → port 5000  
+- MongoDB → port 27017  
 
-2. **View logs**
-```bash
-docker-compose logs -f
-```
-
-3. **Stop services**
+To stop:
 ```bash
 docker-compose down
 ```
 
-## Environment Variables
+---
 
-### Server (.env)
+## ⚙️ Environment Variables
+
+### 🧩 Server `.env`
+
 ```env
-# Server
 PORT=5000
 NODE_ENV=production
-
-# Database
 MONGODB_URI=mongodb://localhost:27017/financial-agent
 
-# Security
-JWT_SECRET=<generated-64-char-hex>
+# JWT & Encryption
+JWT_SECRET=<64-char-secret>
 JWT_EXPIRES_IN=15m
-AES_256_KEY=<generated-32-char-hex>
+AES_256_KEY=<32-char-key>
 
-# Plaid (Sandbox)
-PLAID_CLIENT_ID=68d819151059f3002356b26e
-PLAID_SECRET=096bde63d0169f4ffe0db91d238ea7
+# Plaid Sandbox
+PLAID_CLIENT_ID=your-client-id
+PLAID_SECRET=your-secret
 PLAID_ENV=sandbox
 
 # Gemini AI
-GEMINI_API_KEY=AIzaSyBfIAxzpYVcblQ3Fl90RBqdWp4g_laVq_g
+GEMINI_API_KEY=your-gemini-key
 
 # WebAuthn
 RP_NAME=Financial Agent
@@ -164,100 +157,98 @@ ORIGIN=http://localhost:3000
 ALLOWED_ORIGINS=http://localhost:3000
 ```
 
-### Client (.env)
+### 🧩 Client `.env`
+
 ```env
 VITE_API_URL=http://localhost:5000/api
 ```
 
-## API Endpoints
+---
 
-### Authentication
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - Login with email/password
+## 🧠 AI Assistant Examples
 
-### WebAuthn
-- `POST /api/webauthn/register/options` - Get registration options
-- `POST /api/webauthn/register/verify` - Verify registration
-- `POST /api/webauthn/authenticate/options` - Get authentication options
-- `POST /api/webauthn/authenticate/verify` - Verify authentication
+Ask naturally:
+- “How much will I save by 2026?”
+- “Can I afford a ₹50L home loan?”
+- “Show my expenses for the last 6 months.”
+- “Detect any unusual spending this month.”
 
-### Plaid
-- `POST /api/plaid/create-link-token` - Create Plaid Link token
-- `POST /api/plaid/exchange-token` - Exchange public token
-- `POST /api/plaid/sync-transactions` - Sync latest transactions
-- `POST /api/plaid/unlink` - Unlink bank and delete data
+---
 
-### Accounts
-- `GET /api/accounts` - Get all accounts
-- `GET /api/accounts/balances` - Get real-time balances
+## 🏦 Plaid Sandbox Test Login
 
-### Transactions
-- `GET /api/transactions` - Get transactions (with filters)
-- `GET /api/transactions/:id` - Get transaction details
-- `PATCH /api/transactions/:id` - Update transaction
-- `GET /api/transactions/latest/summary` - Get latest 3 transactions
-- `POST /api/transactions/detect-anomalies` - Run anomaly detection
+```
+Username: user_good
+Password: pass_good
+MFA: 1234
+```
 
-### Charts
-- `GET /api/charts/cashflow?range=6m` - Cash flow data
-- `GET /api/charts/expense-breakdown?range=6m` - Expense breakdown
-- `GET /api/charts/networth?range=12m` - Net worth trend
-- `GET /api/charts/summary` - Summary cards data
-- `POST /api/charts/simulate` - What-if simulation
-- `GET /api/charts/export/:chartType` - Export chart as CSV
+---
 
-### Assistant
-- `POST /api/assistant/query` - Ask AI assistant
-- `POST /api/assistant/calculate/loan-affordability` - Calculate loan affordability
-- `POST /api/assistant/calculate/future-wealth` - Project future wealth
+## 📡 API Endpoints
 
-## Usage Guide
+### 🔑 Authentication
+```
+POST /api/auth/register        → Register user
+POST /api/auth/login           → Login user
+```
 
-### 1. First Time Setup
+### 🪪 WebAuthn
+```
+POST /api/webauthn/register/options
+POST /api/webauthn/register/verify
+POST /api/webauthn/authenticate/options
+POST /api/webauthn/authenticate/verify
+```
 
-1. **Register**: Create an account with email and password
-2. **Enable WebAuthn** (optional): Go to Profile → Security → Enable Device Password
-3. **Link Bank**: Tap "Link Bank" on home screen and connect via Plaid sandbox
+### 🏦 Plaid
+```
+POST /api/plaid/create-link-token
+POST /api/plaid/exchange-token
+POST /api/plaid/sync-transactions
+POST /api/plaid/unlink
+```
 
-### 2. Using Plaid Sandbox
+### 💳 Accounts & Transactions
+```
+GET /api/accounts
+GET /api/accounts/balances
+GET /api/transactions
+GET /api/transactions/:id
+PATCH /api/transactions/:id
+POST /api/transactions/detect-anomalies
+```
 
-For testing, use these credentials:
-- Username: `user_good`
-- Password: `pass_good`
-- MFA: `1234`
+### 📊 Charts & Analytics
+```
+GET /api/charts/cashflow?range=6m
+GET /api/charts/expense-breakdown?range=6m
+GET /api/charts/networth?range=12m
+POST /api/charts/simulate
+GET /api/charts/export/:chartType
+```
 
-### 3. Checking Balances
+### 🤖 AI Assistant
+```
+POST /api/assistant/query
+POST /api/assistant/calculate/loan-affordability
+POST /api/assistant/calculate/future-wealth
+```
 
-1. Tap "Check Balance" on home screen
-2. Enter PIN (or use WebAuthn)
-3. View real-time balances
+---
 
-### 4. AI Assistant Examples
+## 🛡️ Security Best Practices
 
-Ask questions like:
-- "How much money will I have at 40?"
-- "Can I afford a ₹50L home loan?"
-- "Show my spending trend last 6 months"
-- "Any unusual expenses this month?"
+✅ Don’t commit `.env` files  
+✅ Rotate keys regularly  
+✅ Use HTTPS in production  
+✅ Rate-limit API requests  
+✅ Backup encrypted data  
+✅ Monitor for anomalies  
 
-### 5. Voice Input
+---
 
-1. Go to Assistant tab
-2. Tap microphone icon
-3. Speak your question
-4. Tap speaker icon to hear response
-
-## Security Best Practices
-
-1. **Never commit `.env` files** to version control
-2. **Rotate secrets regularly** in production
-3. **Use HTTPS** in production
-4. **Enable rate limiting** on API endpoints
-5. **Monitor for anomalies** in transaction patterns
-6. **Backup encrypted data** regularly
-7. **Implement proper logging** for audit trails
-
-## Deployment
+## ☁️ Deployment
 
 ### Vercel (Frontend)
 ```bash
@@ -265,74 +256,68 @@ cd client
 vercel --prod
 ```
 
-### Render/Heroku (Backend)
+### Render / Heroku (Backend)
 ```bash
 cd server
-# Follow platform-specific deployment guide
+# Follow platform-specific instructions
 ```
 
 ### MongoDB Atlas
-1. Create cluster at mongodb.com
-2. Update `MONGODB_URI` in environment variables
-3. Enable encryption at rest
-
-## Testing
-
-### Run Backend Tests
-```bash
-cd server
-npm test
-```
-
-### Run Frontend Tests
-```bash
-cd client
-npm test
-```
-
-## Troubleshooting
-
-### WebAuthn not working
-- Ensure you're on HTTPS (or localhost)
-- Check browser compatibility
-- Verify RP_ID matches domain
-
-### Plaid connection fails
-- Verify sandbox credentials
-- Check PLAID_ENV is set to "sandbox"
-- Ensure backend can reach Plaid API
-
-### MongoDB connection error
-- Verify MongoDB is running
-- Check MONGODB_URI format
-- Ensure network connectivity
-
-## Contributing
-
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open Pull Request
-
-## License
-
-This project is licensed under the MIT License.
-
-## Support
-
-For issues and questions:
-- Open an issue on GitHub
-- Check documentation
-- Review API endpoints
-
-## Acknowledgments
-
-- Plaid for banking integration
-- Google Gemini for AI capabilities
-- SimpleWebAuthn for authentication
-- Chart.js for visualizations
+- Create cluster at [mongodb.com](https://www.mongodb.com)
+- Enable **encryption at rest**
+- Update `MONGODB_URI` in `.env`
 
 ---
 
-Built with ❤️ for better financial management
+## 🧪 Testing
+
+```bash
+cd server && npm test
+cd client && npm test
+```
+
+---
+
+## 🧰 Troubleshooting
+
+| Problem | Possible Fix |
+|----------|---------------|
+| ❌ WebAuthn not working | Use HTTPS or correct RP_ID |
+| 🔐 Plaid error | Verify sandbox credentials |
+| 📦 MongoDB connection failed | Check URI & service status |
+| ⚠️ CORS issue | Update `ALLOWED_ORIGINS` in `.env` |
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! 🎉
+
+```bash
+git checkout -b feature/awesome-feature
+git commit -m "Add awesome feature"
+git push origin feature/awesome-feature
+```
+
+Then open a pull request 🚀
+
+---
+
+## 📜 License
+
+Licensed under the **MIT License** — free for personal and commercial use.
+
+---
+
+## 🙏 Acknowledgments
+
+- 🏦 [Plaid](https://plaid.com) — Bank Integration  
+- 🧠 [Google Gemini](https://deepmind.google) — AI Engine  
+- 🔐 [SimpleWebAuthn](https://simplewebauthn.dev) — Authentication  
+- 📊 [Chart.js](https://www.chartjs.org) — Data Visualization  
+
+---
+
+### 💎 Crafted with ❤️ for a Smarter Financial Future
+
+**👉 [Try Live Demo](https://personal-finance-ai-client.vercel.app)**
